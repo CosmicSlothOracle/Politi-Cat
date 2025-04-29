@@ -1,17 +1,28 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import InGamePage from './components/InGamePage';
 
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <LandingPage />
+    },
+    {
+      path: "/play",
+      element: <InGamePage />
+    }
+  ],
+  {
+    future: {
+      v7_startTransition: true
+    }
+  }
+);
+
 const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/play" element={<InGamePage />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
