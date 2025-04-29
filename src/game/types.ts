@@ -18,6 +18,11 @@ export enum Category {
   WEALTH = 'Wealth'
 }
 
+export enum PlayerType {
+  HUMAN = 'human',
+  AI = 'ai'
+}
+
 export interface Card {
   name: string;
   imagePath: string;
@@ -30,10 +35,34 @@ export interface Card {
   quote?: string;
 }
 
+export interface CardPlay {
+  playerId: string;
+  card: Card;
+}
+
+export interface CardComparison {
+  category: Category;
+  player1Value: number;
+  player2Value: number;
+  winner: string | null;
+}
+
+export interface RoundHistory {
+  round: number;
+  category: Category;
+  cards: CardPlay[];
+  winner: string | null;
+  wasTie: boolean;
+}
+
 export interface Player {
+  id: string;
   name: string;
+  type: PlayerType;
   deck: Card[];
-  isAI?: boolean;
+  currentCard: Card | null;
+  cardsWon: Card[];
+  isActive: boolean;
 }
 
 export interface GameContext {

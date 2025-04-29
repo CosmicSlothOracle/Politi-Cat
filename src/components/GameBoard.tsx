@@ -1,7 +1,7 @@
 import React from 'react';
 import CardDisplay from './CardDisplay';
 import { HUD } from './HUD';
-import { Card, Category, GameContext, GameState, Player } from '../game/types';
+import { Card, Category, GameContext, GameState, PlayerType } from '../game/types';
 
 interface GameBoardProps {
   game: GameContext;
@@ -12,28 +12,25 @@ interface GameBoardProps {
 const GameBoard: React.FC<GameBoardProps> = ({ game, onCategorySelect, onNextPhase }) => {
   const { state, player1, player2, topCard1, topCard2, activePlayer, selectedCategory, roundWinner } = game;
 
-  // Determine card visibility based on game state
-  const isCard1Visible = state !== GameState.SETUP &&
-                         topCard1 !== undefined &&
-                         (state !== GameState.CATEGORY_SELECTION || activePlayer === player1);
+  // Determine if we're in category selection or comparison phase
+  const isSelectionPhase = state === GameState.CATEGORY_SELECTION;
+  const isComparisonPhase = state === GameState.VALUE_COMPARISON || state === GameState.RESOLVE_WINNER;
 
-  const isCard2Visible = state !== GameState.SETUP &&
-                         topCard2 !== undefined &&
-                         (state !== GameState.CATEGORY_SELECTION || activePlayer === player2 ||
-                         state === GameState.VALUE_COMPARISON ||
-                         state === GameState.RESOLVE_WINNER);
+  // Player card is always visible, opponent card only after category selection
+  const showPlayerCard = topCard1 !== undefined && state !== GameState.SETUP;
+  const showOpponentCard = topCard2 !== undefined && !isSelectionPhase;
 
   // Determine if categories are selectable
   const isCategorySelectable = state === GameState.CATEGORY_SELECTION &&
-                               ((activePlayer === player1 && !player1.isAI) ||
-                               (activePlayer === player2 && !player2.isAI));
-
-  // Available categories
-  const availableCategories = Object.values(Category);
+                              ((activePlayer === player1 && player1.type === PlayerType.HUMAN) ||
+                              (activePlayer === player2 && player2.type === PlayerType.HUMAN));
 
   // Determine winner card for highlighting
   const isCard1Winner = state === GameState.RESOLVE_WINNER && roundWinner === player1;
   const isCard2Winner = state === GameState.RESOLVE_WINNER && roundWinner === player2;
+
+  // Available categories
+  const availableCategories = Object.values(Category);
 
   return (
     <div className="game-board">
@@ -54,16 +51,13 @@ const GameBoard: React.FC<GameBoardProps> = ({ game, onCategorySelect, onNextPha
         )}
       </div>
 
-      <div className="cards-container">
+      <div className="cards-display">
         {topCard1 && (
           <div className="player1-card">
             <CardDisplay
               card={topCard1}
-              isVisible={isCard1Visible}
+              isVisible={showPlayerCard}
               isWinner={isCard1Winner}
-              selectedCategory={selectedCategory}
-              onCategorySelect={onCategorySelect}
-              isCategorySelectable={isCategorySelectable && activePlayer === player1}
             />
           </div>
         )}
@@ -72,15 +66,26 @@ const GameBoard: React.FC<GameBoardProps> = ({ game, onCategorySelect, onNextPha
           <div className="player2-card">
             <CardDisplay
               card={topCard2}
-              isVisible={isCard2Visible}
+              isVisible={showOpponentCard}
               isWinner={isCard2Winner}
-              selectedCategory={selectedCategory}
-              onCategorySelect={onCategorySelect}
-              isCategorySelectable={isCategorySelectable && activePlayer === player2}
             />
           </div>
         )}
       </div>
+
+      {isSelectionPhase && isCategorySelectable && (
+        <div className="category-selection">
+          {availableCategories.map(category => (
+            <button
+              key={category}
+              className="category-button"
+              onClick={() => onCategorySelect(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      )}
 
       {state === GameState.GAME_OVER && (
         <div className="game-over-overlay">

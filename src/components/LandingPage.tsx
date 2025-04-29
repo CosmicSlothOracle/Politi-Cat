@@ -1,44 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useSound from '../hooks/useSound';
 import '../styles/main.css';
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
-  const [isMusicPlaying, setIsMusicPlaying] = useState<boolean>(false);
   const [showLibrary, setShowLibrary] = useState<boolean>(false);
 
-  // Optional: Play background music
-  useEffect(() => {
-    const audio = new Audio('/assets/music/theme.mp3');
-    audio.loop = true;
-
-    if (isMusicPlaying) {
-      audio.play().catch(error => {
-        // Auto-play might be blocked by browser policies
-        console.log('Autoplay prevented:', error);
-      });
-    }
-
-    return () => {
-      audio.pause();
-      audio.currentTime = 0;
-    };
-  }, [isMusicPlaying]);
-
-  // Handle animation effects
-  useEffect(() => {
-    // Title shimmer animation already handled in CSS
-    // Add any additional effects here
-  }, []);
+  // Use our custom sound hook
+  const { isPlaying, toggle } = useSound('/assets/music/theme.mp3', {
+    loop: true,
+    volume: 0.5
+  });
 
   // Handle navigation to game
   const handlePlayAI = () => {
     navigate('/play');
-  };
-
-  // Toggle music playback
-  const toggleMusic = () => {
-    setIsMusicPlaying(!isMusicPlaying);
   };
 
   // Toggle library view
@@ -91,8 +68,8 @@ const LandingPage: React.FC = () => {
       </button>
 
       <div
-        className={`music-control ${isMusicPlaying ? 'playing' : ''}`}
-        onClick={toggleMusic}
+        className={`music-control ${isPlaying ? 'playing' : ''}`}
+        onClick={toggle}
       >
         <div className="cassette-icon">
           <div className="wheel left"></div>
