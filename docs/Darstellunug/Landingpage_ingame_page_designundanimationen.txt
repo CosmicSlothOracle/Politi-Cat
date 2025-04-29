@@ -1,0 +1,125 @@
+Landingpage: POLITI CAT
+1. Hintergrund
+Farbverlauf: Von türkisweiß (oben) nach dunkelblau (unten), weich ineinander übergehend – erzeugt Tiefe und visuelle Ruhe.
+
+Stil: Sanfter Retro-Scanline-Shader-Effekt als Overlay, subtil (nicht störend), vermittelt Retro-Ästhetik.
+
+2. Überschrift & Spieltitel
+Position: Oben mittig auf der Seite.
+
+Text: POLITI CAT
+
+Effekt: Spiegel-Reflexion (leicht animiert, wie Wasserwellen-Effekt von unten), beim Hover „zittert“ der Text minimal, um Spannung und Humor zu vermitteln.
+
+Schriftart: High-Quality Pixel-Art-Stil, inspiriert von japanischen SNES-RPGs, modernisiert für Retina-Displays (z. B. "Press Start 2P" als Basis, custom angepasst).
+
+3. Navigationselement: CAT Library
+Position: Oben rechts.
+
+Stil: Pixelart-Button mit leichtem Glow beim Hover.
+
+Text: CAT Library
+
+Interaktiv: Führt zur Kartenbibliothek oder Infoseite.
+
+4. Haupt-Buttons (zentral)
+Position: Mitte der Seite, leicht nach unten versetzt.
+
+Zwei Buttons:
+
+Play Against AI
+
+Play Against A Friend
+
+Stil: Groß, rundlich, im Pixelrahmen, mit dunkler Outline. Hover-Effekt: Farbumschwung (türkis zu dunkelblau), Text pulsiert leicht.
+
+5. Musiksteuerung
+Position: Unten links.
+
+Icon: Retro-Kassettenrekorder-Grafik im Miniaturstil, animiert (Bänder drehen sich, wenn Musik läuft).
+
+Funktion: Play/Pause der Landingpage-Musik (Soundtrack im Stil von Earthbound meets Synthwave).
+
+Bedienbar: Bei Klick Umschaltung + visuelles Feedback (Kassetten-Icon wechselt Farbe).
+
+In-Game-Page – Darstellung
+1. Kartenpräsentation (zentral, Fokuspunkt)
+Position: Exakt zentriert auf der Seite.
+
+Größe: In originaler Skalierung aus dem Asset-Folder. Keine Verzerrung.
+
+Effekt:
+
+Dynamischer Glow-Effekt unterhalb der Karte, in leuchtendem türkisblauem Licht, weich auslaufend, mit subtiler Pulsation (1–2s Intervall).
+
+Schattenwurf nach unten, multipliziert mit transparenter Überlagerung – vermittelt „Herausheben aus dem Spielfeld“.
+
+Hintergrund der Karte leicht abgedunkelt, um Fokus zu verstärken.
+
+2. Rechte untere Bildschirmhälfte – Interface-Bereich
+Funktionaler Bereich mit folgenden Elementen:
+
+Handkartenübersicht als horizontales Scroll-Menü (Pixel-Kacheloptik).
+
+Aktions-Buttons (z. B. Ausspielen, Abwerfen, Details), im dunklen Pixelstil mit türkisfarbener Leuchtschrift.
+
+Tooltips erscheinen beim Hover, in einem halbtransparenten Retro-Textfeld.
+
+3. Zusätzliche visuelle Dynamik
+Der gesamte Bereich „lebt“:
+
+Karten bewegen sich leicht bei Mouseover (3–5px translate).
+
+Glow ist abhängig vom Kartentyp (Charakter = Türkis, Spezial = Violett, Falle = Rot) – das schafft visuelles Feedback.
+
+Ein Soundeffekt erklingt beim Aufdecken der Karte (optional ein Synth-„Whoosh“).
+
+Vergleichsphase: Kartenvergleich nach Kategorienwahl
+1. Kartenanzeige – Nebeneinander
+Position: Mitte der Seite, zwei Karten nebeneinander, symmetrisch ausgerichtet.
+
+Skalierung: Beide Karten gleich groß, leicht nach oben versetzt vom Zentrum, damit Raum für Effekte und Bewertung bleibt.
+
+Zentraler Fokus: Die gewählte Kategorie ist visuell hervorgehoben (z. B. durch pulsierenden Rahmen um die Zahl oder Leuchteffekt auf Text).
+
+2. Gewinnerkarte – visuelle Hervorhebung
+Goldschein-Effekt:
+
+Sanfter, animierter goldener Glow-Ring um die Gewinnerkarte, leicht oszillierend.
+
+Highlight-Overlay: Ein halbtransparenter, sich drehender Glanzlayer über der Karte.
+
+Vergrößerung: Die Karte ist um etwa 15 % skaliert, zentriert in ihrer Position, um Dominanz zu signalisieren.
+
+Begleitender Sound: Arcade-typischer „Victory-Ding“-Sound (8-bit meets Synthwave).
+
+3. Oben links – Spielphasen-Button
+Textbutton mit z. B. „Vergleichsphase“, „Ausspielphase“, „Wertung“ etc.
+
+Stil: Rechteckiger Pixel-Button mit leichter Einfärbung je nach Phase (z. B. Gelb für Vergleich, Grün für Auswahl).
+
+Bei Hover: Tooltip mit Beschreibung.
+
+Endphase: Arcade-Style-Winning-Animation
+Wenn ein Spieler das gesamte Spiel gewinnt:
+
+1. Vollbild-Animation
+Bildschirm dunkelt ab, nur der Gewinnername oder -titel leuchtet auf.
+
+Textanimation:
+
+Groß: VICTORY! oder CATMANDER WINS!
+
+Pixel-Schrift, langsam von unten nach oben scrollend oder blinkend im 80er-Stil.
+
+Partikel-Effekt:
+
+Regen aus kleinen Pixel-Sternen, gold und türkisfarben.
+
+Optionaler Effekt: Eine animierte Retro-Medaille fällt von oben herunter und dockt mittig an.
+
+2. Sounddesign
+Chiptune-Musik mit heroischen Akkorden, stilistisch zwischen Mega Man und Final Fantasy Victory Fanfare, modern gemastert.
+
+Länge: ca. 4–6 Sekunden, dann Loop oder Ausklang.
+

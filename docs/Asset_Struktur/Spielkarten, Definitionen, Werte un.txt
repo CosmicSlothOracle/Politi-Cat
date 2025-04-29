@@ -1,0 +1,8 @@
+Spielkarten, Definitionen, Werte und zugehörige Dateipfade
+
+Folgende Spielkarten sind derzeit im Spiel enthalten; es werden zukünftig weitere Karten ergänzt.
+
+Jede Karte ist über ihren Namen eindeutig identifizierbar. Dieser Name dient gleichzeitig als Schlüssel für Definitionen, Werte und die Dateipfade zu den entsprechenden Kartenassets.
+
+Jede Spielkarte besitzt zu jeder Kategorie einen festen Wert zwischen 1 und 10. Diese Werte sind in einer separaten Tabelle: "C:\Users\Diddle\Politi_Cat\docs\Asset_Struktur\Politiker_Bewertungstabelle.xhtml"  genau definiert. Jede Spielkarte muss über die defenierten Werte verfügen. 
+

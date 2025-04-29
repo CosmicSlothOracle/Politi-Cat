@@ -1,0 +1,15 @@
+Politik hat Spielregeln
+
+Es wird ein klassisches Quartettspiel gespielt. Aktuell sind zehn Karten mit klar definierten Werten im Spiel. Damit soll zunächst das Grundspiel gelegt und ausprobiert werden.
+
+Spielstruktur
+
+Alle zehn Karten werden gemischt. Jedem Spieler werden fünf Karten verdeckt auf einen Stapel zugeteilt. Ein zufällig ausgewählter Spieler zieht die oberste Karte seines Stapels, darf sie sich ansehen und eine der folgenden Kategorien wählen:
+Charisma, Leadership, Influence, Integrity, Trickery, Wealth.
+
+Der gewählte Wert der Karte wird mit dem Wert der obersten Karte des Gegenspielers in derselben Kategorie verglichen. Die Karte des Gegenspielers liegt ebenfalls verdeckt auf dessen Stapel und wird gleichzeitig gezogen.
+
+Der Spieler mit dem höheren Wert in der gewählten Kategorie gewinnt beide Karten. Diese werden unter seinen Kartenstapel gelegt. Das Spiel läuft so lange, bis ein Spieler keine Karten mehr besitzt. Der Spieler, der am Ende alle Karten besitzt, gewinnt.
+
+Kommt es zu einem Unentschieden – also wenn beide Karten denselben Wert aufweisen –, werden beide Karten zur Seite gelegt. In der nächsten Runde wird erneut gespielt, und der Gewinner dieser Runde erhält zusätzlich alle bisher zur Seite gelegten Karten. Kommt es erneut zu einem Unentschieden, wächst der Stapel der unentschiedenen Karten weiter an. Der Spieler, der die erste Runde gewinnt, in der ein klares Ergebnis erzielt wird, erhält alle zur Seite gelegten Karten.
+Beispiel: Kommt es zu zwei Unentschieden in Folge und gewinnt ein Spieler die dritte Runde, erhält er insgesamt sechs Karten.

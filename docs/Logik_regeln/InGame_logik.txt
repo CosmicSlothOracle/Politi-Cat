@@ -1,0 +1,40 @@
+GameStates:
+  - SETUP
+  - DRAW_PHASE
+  - CATEGORY_SELECTION
+  - VALUE_COMPARISON
+  - RESOLVE_WINNER
+  - HANDLE_TIE
+  - CHECK_END
+  - GAME_OVER
+
+Entities:
+  - Player
+    - Deck: Queue<Card>
+    - Name
+  - Card
+    - Name
+    - Charisma: Int
+    - Leadership: Int
+    - Influence: Int
+    - Integrity: Int
+    - Trickery: Int
+    - Wealth: Int
+  - Game
+    - State: GameState
+    - Player1: Player
+    - Player2: Player
+    - DrawPile: List<Card>
+    - TiePile: List<Card>
+    - ActivePlayer: Player
+    - CategoryChosen: Enum
+
+Transitions:
+  - SETUP → DRAW_PHASE: Karten mischen, austeilen
+  - DRAW_PHASE → CATEGORY_SELECTION: Spieler zieht oberste Karte
+  - CATEGORY_SELECTION → VALUE_COMPARISON: Spieler wählt Kategorie
+  - VALUE_COMPARISON → RESOLVE_WINNER: Werte vergleichen
+  - RESOLVE_WINNER → DRAW_PHASE: Gewinner erhält Karten, TiePile optional leeren
+  - RESOLVE_WINNER → HANDLE_TIE: Bei Gleichstand Karten in TiePile legen
+  - HANDLE_TIE → DRAW_PHASE: Spiel läuft weiter
+  - CHECK_END: Wenn ein Spieler 0 Karten → GAME_OVER
