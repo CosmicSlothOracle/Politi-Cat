@@ -9,7 +9,7 @@ const LandingPage: React.FC = () => {
 
   // Optional: Play background music
   useEffect(() => {
-    const audio = new Audio('/assets/music/theme.mp3');
+    const audio = new Audio('/assets/music/main_theme.mp3');
     audio.loop = true;
 
     if (isMusicPlaying) {
