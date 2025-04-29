@@ -33,7 +33,7 @@ const CardDisplay: React.FC<CardDisplayProps> = ({
       {isVisible ? (
         <>
           <h3 className="card-name">{card.name}</h3>
-          <div className="card-image-container">
+          <div className="card-container">
             <img src={card.imagePath} alt={card.name} className="card-image" />
           </div>
           <ul className="card-attributes">
